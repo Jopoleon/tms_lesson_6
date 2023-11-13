@@ -7,4 +7,7 @@ func main() {
 
 	fmt.Println("After commit")
 
+	///
+	fmt.Println("After new_branch")
+
 }
