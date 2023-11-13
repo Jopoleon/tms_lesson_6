@@ -10,6 +10,5 @@ func main() {
 	///
 	fmt.Println("After new_branch")
 
-	fmt.Println("Message for conflict")
-
+	fmt.Println("Conflict")
 }
