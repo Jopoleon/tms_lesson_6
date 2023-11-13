@@ -15,6 +15,7 @@ func main() {
 func helloHandler(w http.ResponseWriter, req *http.Request) {
 	fmt.Println("Request happened, method: ", req.Method)
 	fmt.Println("Remote addr: ", req.RemoteAddr)
+	fmt.Println("!!!! This is a NEW verions of server !!!!")
 	//fmt.Println(req.Header.Get("X-Real-IP"))
-	fmt.Fprintf(w, "hello there!")
+	fmt.Fprintf(w, "hello there! Your IP is: %s", req.RemoteAddr)
 }
