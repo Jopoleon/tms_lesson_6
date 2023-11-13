@@ -1,16 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("hello")
+	fmt.Println("server started on port 8080")
+	http.HandleFunc("/", helloHandler)
+	http.ListenAndServe(":8080", nil)
+	//fmt.Println("this is golang program on linux")
+}
 
-
-/// asfasfafasd
-	fmt.Println("After commit")
-
-	///
-	fmt.Println("After new_branch")
-
-	fmt.Println("Conflict")
+func helloHandler(w http.ResponseWriter, req *http.Request) {
+	fmt.Println("Request happened, method: ", req.Method)
+	fmt.Println("Remote addr: ", req.RemoteAddr)
+	//fmt.Println(req.Header.Get("X-Real-IP"))
+	fmt.Fprintf(w, "hello there!")
 }
